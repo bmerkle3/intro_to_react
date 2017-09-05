@@ -12,10 +12,10 @@
 
     const ce = React.createElement
 
-    const MyTitle = function () {
+    const MyTitle = function (props) {
       return (
         ce('div', null, 
-          ce('h1', null, 'My second component')
+          ce('h1', null, props.title)
           )
         )
     } 
@@ -31,11 +31,11 @@
 
 
     const MyFirstComponent = function () {
-      return ce('div', null, 
-        [ce(MyTitle),
-        ce(MyTitle),
-        ce(MyTitle),
-        ce(MyTitle)]
+      return ce('div', { id: 'my-first-component' }, 
+        [ce(MyTitle,),
+        ce(MyTitle, { title: 'Silicon Valley'}),
+        ce(MyTitle, { title: 'Modern Family'}),
+        ce(MyTitle, { title: 'Parks and Recreation'})]
           )
       }
 
