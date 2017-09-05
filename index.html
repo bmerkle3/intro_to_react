@@ -15,7 +15,7 @@
     const MyTitle = function (props) {
       return (
         ce('div', null, 
-          ce('h1', null, props.title)
+          ce('h1', { style: { color: props.colour } }, props.title)
           )
         )
     } 
@@ -31,11 +31,11 @@
 
 
     const MyFirstComponent = function () {
-      return ce('div', { id: 'my-first-component' }, 
-        [ce(MyTitle,),
-        ce(MyTitle, { title: 'Silicon Valley'}),
-        ce(MyTitle, { title: 'Modern Family'}),
-        ce(MyTitle, { title: 'Parks and Recreation'})]
+      return ce('div', { id: 'my-first-component', colour: 'LightSlateGray' }, 
+        [ce(MyTitle, { title: 'Friends', colour: 'LightGreen'}),
+        ce(MyTitle, { title: 'Silicon Valley', colour: 'LightSeaGreen'}),
+        ce(MyTitle, { title: 'Modern Family', colour: 'LightSkyBlue'}),
+        ce(MyTitle, { title: 'Parks and Recreation', colour: 'LightSalmon'})]
           )
       }
 
